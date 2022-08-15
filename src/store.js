@@ -13,15 +13,12 @@ export const store = reactive({
   totalPage: 0,
   movieDetails: null,
   casts: null,
+  date: null,
 
   async getMovieList(pageNumber = 1) {
     this.loading = true;
-    if (this.starDate != null && this.endDate != null) {
-      this.getMovieListByDate(
-        pageNumber,
-        this.starDate,
-        this.endDate
-      );
+    if (this.date != null) {
+      this.getMovieListByDate(pageNumber, this.date[0], this.date[1]);
       return;
     }
 
@@ -42,8 +39,9 @@ export const store = reactive({
     release_end_date
   ) {
     this.loading = true;
-    this.starDate = release_start_date;
-    this.endDate = release_end_date;
+
+    //save in store
+    this.date = [release_start_date, release_end_date];
 
     const response = await fetch(
       this.baseUrl +

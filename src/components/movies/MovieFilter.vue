@@ -26,18 +26,18 @@ export default {
 
   data() {
     return {
-      date: null,
+      date: store.date,
       isDisabled: true,
     };
   },
+
 
   methods: {
     search() {
       if (this.date != null) {
         store.getMovieListByDate(1, this.date[0], this.date[1]);
       } else if (store.endDate && store.starDate) {
-        store.starDate = null;
-        store.endDate = null;
+        store.date=null;
         store.getMovieList(1);
       }
     },
@@ -58,7 +58,6 @@ export default {
 </script>
 
 <style>
-
 .form-input {
   @apply border-customGray-100 ml-7 border border-solid h-8 px-2;
 }

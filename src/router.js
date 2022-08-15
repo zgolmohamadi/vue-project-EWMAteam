@@ -6,8 +6,8 @@ import NotFound from "./pages/NotFound.vue";
 const router = createRouter({
   history: createWebHistory('/vue-project-EWMAteam/'),
   routes: [
-    { path: "/", redirect: "/moviesList" },
-    { path: "/moviesList", component: MoviesList, name:"home", props: true },
+    { path: "/", component: MoviesList, name:"home", props: true },
+    { path: "/moviesList", redirect:'/' },
     { path: "/movie/:id", component: movieDetail, props: true },
     { path: "/:notFound(.*)", component: NotFound },
   ],

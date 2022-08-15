@@ -1,5 +1,6 @@
 <template>
   <movie-filter></movie-filter>
+ 
   <div
     v-if="loading"
     class="w-full flex mt-[119px] justify-center p-16"
@@ -22,9 +23,11 @@
     </movie-item>
   </div>
 
-  <div v-else class="mt-10 text-center font-bold h-48">
+  <div v-else-if="!loading && !hasMovies" class="mt-10 text-center font-bold h-48">
     no Data Found
   </div>
+
+
 
   <movies-pagination
     v-if="!loading"
@@ -105,7 +108,7 @@ export default {
       if (state === "next") {
         pageNumber = this.pageNumber + 1;
       } else {
-        pageNumber = this.pageNumber - 1;
+        pageNumber = this.pageNumber>1 ? this.pageNumber - 1 : 1;
       }
       store.getMovieList(pageNumber);
     },
@@ -113,4 +116,5 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+</style>
