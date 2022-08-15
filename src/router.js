@@ -3,7 +3,7 @@ import MoviesList from "./pages/movies/MoviesList.vue";
 import NotFound from "./pages/NotFound.vue";
 
 const router = createRouter({
-  history: createWebHistory('/vue-project-EWMAteam/'),
+  history: createWebHistory(),
   routes: [
     { path: "/", redirect: "/moviesList" },
     { path: "/moviesList", component: MoviesList, name:"home", props: true },
