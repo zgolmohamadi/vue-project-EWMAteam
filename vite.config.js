@@ -5,7 +5,7 @@ import vue from '@vitejs/plugin-vue'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base:'/vue-project-EWMAteam/',
+  base: process.env.NODE_ENV==="production" ? '/vue-project-EWMAteam/' :'/',
   plugins: [vue()],
   resolve: {
     alias: {
