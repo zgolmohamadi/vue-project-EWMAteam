@@ -1,7 +1,7 @@
 <template>
-  <section class="top-box justify-between px-16">
+  <section class="top-box justify-between px-2 md:px-16">
     <div class="flex items-center">
-      <label class="mr-7">search by release Date:</label>
+      <label class="mr-7 hidden md:block ">search by release Date:</label>
       <Datepicker
         v-model="date"
         modelType="yyyy-MM-dd"
@@ -9,7 +9,7 @@
         autoApply
         placeholder="Select Date"
         :enableTimePicker="false"
-        class="w-64"
+        class="md:w-64"
         :format="format"
       ></Datepicker>
     </div>

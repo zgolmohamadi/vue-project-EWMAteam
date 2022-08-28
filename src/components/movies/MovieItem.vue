@@ -26,7 +26,10 @@
         </ul>
       </div>
     </div>
-    <router-link :to="DetailsLink" class="absolute w-full h-full top-0 left-0">
+    <router-link
+      :to="DetailsLink"
+      class="absolute w-full h-full top-0 left-0"
+    >
     </router-link>
   </base-card>
 </template>
@@ -50,13 +53,13 @@ export default {
       }
     },
     DetailsLink() {
-      return  '/movie/' + this.id; 
+      return "/movie/" + this.id;
     },
   },
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
 .date {
   @apply w-4 h-4  inline-block bg-cover bg-center mr-2;
   background-image: url("@/assets/calendare.png");
@@ -64,10 +67,13 @@ export default {
 .genres {
   min-height: 28px;
   overflow: hidden;
-}
-.genres li:not(:last-child):after {
-  content: "•";
-  position: absolute;
-  right: -8px;
+
+  li {
+    &:not(:last-child):after {
+      content: "•";
+      position: absolute;
+      right: -8px;
+    }
+  }
 }
 </style>

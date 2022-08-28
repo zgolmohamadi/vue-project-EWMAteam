@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-[160px] flex justify-center h-10">
+  <div class="mt-4 md:mt-[160px] flex justify-center h-10">
     <button
       class="pr-8 text-blue-200 font-bold disabled:text-black-450"
       @click.prevent="$emit('goPrevious', 'prev')"

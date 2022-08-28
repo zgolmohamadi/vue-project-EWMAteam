@@ -6,14 +6,14 @@ module.exports = {
   theme: {
     extend: {
       animation: {
-        'rotation': 'rotation 1s linear infinite',
+        rotation: "rotation 1s linear infinite",
       },
       colors: {
         green: "#11B980",
-       
+
         blue: {
-          100:"#549DF2",
-          200:"#318FE7"
+          100: "#549DF2",
+          200: "#318FE7",
         },
         customGray: {
           10: "#f1f1f1",
@@ -31,14 +31,16 @@ module.exports = {
       backgroundImage: {
         calendar: "url('/assets/calendare.png')",
       },
-     
     },
     screens: {
+      sm: "480px",
+      md: "768px",
+      lg: "976px",
       xl: "1024px",
     },
     maxWidth: {
-      '330': '330px',
-     },
+      330: "330px",
+    },
   },
   plugins: [],
 };

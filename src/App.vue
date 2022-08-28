@@ -1,6 +1,6 @@
 <template>
   <the-header></the-header>
-  <main class="container mx-auto pb-24">
+  <main class="md:container mx-auto pb-24 px-4 md:px-0">
     <router-view v-slot="{ Component }">
       <transition name="fade">
         <component :is="Component" />

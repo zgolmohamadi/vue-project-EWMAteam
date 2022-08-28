@@ -6,27 +6,30 @@
     <span class="loader"></span>
   </div>
   <div v-else-if="movieDetails && !this.loading">
-    <div class="top-box px-9">
+    <div class="top-box sm:px-9 px-4">
       <button @click.prevent="goToHome" class="btn px-5">
         ← Back
       </button>
-      <a :href="movieDetails.homepage" class="pl-16 flex flex-col">
+      <a
+        :href="movieDetails.homepage"
+        class="pl-4 md:pl-16 flex flex-col"
+      >
         <span class="text-lg font-bold">{{
           movieDetails.title
         }}</span>
         <span class="text-lg">{{ movieDetails.tagline }}</span>
       </a>
     </div>
-    <div class="mt-20 flex">
-      <div class="image-holder">
+    <div class="mt-4 md:mt-20 flex flex-col sm:flex-row">
+      <div class="image-holder overflow-hidden max-w-full center">
         <img
           :src="posterPath"
           alt="poster-img"
           title="poster-image"
-          class="max-w-330 rounded-xl"
+          class="md:max-w-330 rounded-xl max-w-full mx-auto"
         />
       </div>
-      <ul class="ml-16 grow">
+      <ul class="mt-3 md:mt-0 sm:ml-16 grow">
         <li>
           <span>Budget</span>
           <span>${{ formattedPrice(movieDetails.budget) }}</span>
@@ -86,7 +89,7 @@
     <movie-casts
       :castList="castList"
       v-if="castList"
-      class="mt-20"
+      class="mt-4 md:mt-20"
     ></movie-casts>
   </div>
   <div v-else class="mt-10 text-center font-bold h-48">
@@ -146,15 +149,14 @@ export default {
   },
 };
 </script>
+<style lang="scss" scoped>
+ul {
+  li {
+    @apply flex justify-between mb-2.5  last:mb-0 items-center flex-wrap;
 
-<style scoped>
-ul li {
-  @apply flex justify-between mb-2.5  last:mb-0 items-center;
-}
-ul li span {
-  @apply first:font-bold last:text-sm;
-}
-.image-holder {
-  min-width: 200px;
+    span {
+      @apply first:font-bold last:text-sm;
+    }
+  }
 }
 </style>
