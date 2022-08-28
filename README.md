@@ -27,3 +27,8 @@ npm run dev
 ```sh
 npm run build
 ```
+
+### Setup
+For this project , we need backend to generate apikey
+I insert apiKey in .env file, it should be in .gitignore but i dont hide it because there is no backend to generate api key 
+
