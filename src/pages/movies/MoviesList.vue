@@ -8,8 +8,8 @@
     <span class="loader"></span>
   </div>
   <div
-    class="gap-x-16 mt-4 columns-1 md:mt-[119px] md:columns-2 xl:columns-3"
     v-else-if="!loading && hasMovies"
+    class="gap-x-16 mt-4 columns-1 md:mt-[119px] md:columns-2 xl:columns-3"
   >
     <movie-item
       v-for="movie in moviesList"
@@ -42,17 +42,17 @@
 </template>
 
 <script>
-import { store } from "../../store.js";
-import MovieItem from "@/components/movies/MovieItem.vue";
-import MoviesPagination from "@/components/movies/MoviesPagination.vue";
-import MovieFilter from "@/components/movies/MovieFilter.vue";
+import { store } from '../../store.js';
+import MovieItem from '@/components/movies/MovieItem.vue';
+import MoviesPagination from '@/components/movies/MoviesPagination.vue';
+import MovieFilter from '@/components/movies/MovieFilter.vue';
 export default {
   components: {
     MovieItem,
     MoviesPagination,
     MovieFilter,
   },
-  props: ["pageNumberProp"],
+  props: ['pageNumberProp'],
   data() {
     return {
       nextIsDisable: false,
@@ -106,7 +106,7 @@ export default {
 
     changePage(state) {
       let pageNumber;
-      if (state === "next") {
+      if (state === 'next') {
         pageNumber = this.pageNumber + 1;
       } else {
         pageNumber = this.pageNumber > 1 ? this.pageNumber - 1 : 1;
